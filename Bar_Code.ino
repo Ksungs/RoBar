@@ -65,17 +65,16 @@ void loop() {
 
 void GodFather()
 {
-menu = "God Father";
-digitalWrite(A1A, HIGH);
-digitalWrite(A1B, LOW);
-digitalWrite(D1A, HIGH);
-digitalWrite(D1B, LOW);
-delay(3000);
-digitalWrite(A1A, LOW);
-digitalWrite(A1B, LOW);
-delay(5000);
-digitalWrite(D1A, LOW);
-digitalWrite(D1B, LOW);
-delay(3000);
-}
+  digitalWrite(A1A, HIGH);
+  digitalWrite(A1B, LOW);
+  digitalWrite(D1A, HIGH);
+  digitalWrite(D1B, LOW);
+  delay(3000);
+  digitalWrite(A1A, LOW);
+  digitalWrite(A1B, LOW);
+  delay(5000);
+  digitalWrite(D1A, LOW);
+  digitalWrite(D1B, LOW);
+  delay(3000);
+}//추후 음료 제조 함수 추가
 
