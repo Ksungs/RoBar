@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bottender.robar.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+
     private lateinit var binding: ActivityMainBinding
     private var menus = mutableListOf(
         Menu("칵테일 1", false, false),
@@ -70,7 +73,12 @@ class MainActivity : AppCompatActivity() {
 
         menuAddSelectBtn.setOnClickListener {
             val menuTitle = menuAddTitle.text.toString()
+
             if (menuTitle.isNotEmpty()) {
+
+                //기능 추가
+                insertUserMenu(menuTitle)
+
                 val menu = Menu(menuTitle, false, false)
                 menus.add(menu)
                 Log.d("debug", "Menus after adding: $menus")
@@ -79,6 +87,21 @@ class MainActivity : AppCompatActivity() {
             }
         }
         dialog.show()
+    }
+
+    private fun loadUserMenuList() {
+        val db: AppDatabase? = AppDatabase.getDatabase(applicationContext)
+        val userMenuList: List<UserMenu> = db?.userMenuDao()!!.getAllUserMenu()
+        if(userMenuList.isNotEmpty()) {
+            val position: Int = userMenuList.size - 1
+            Toast.makeText(this, userMenuList.get(position).menusName+" 등록됨",
+                Toast.LENGTH_SHORT).show()
+        }
+        else {
+            Toast.makeText(this, "등록 메뉴 없음",
+                Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     private fun initializeViews() {
@@ -103,6 +126,21 @@ class MainActivity : AppCompatActivity() {
                 binding.menuDeleteButton.text = "삭제 완료" // 버튼 텍스트 변경
             }
             deleteMenus()
+        }
+    }
+
+    private fun insertUserMenu(menuTitle: String) {
+        val db = AppDatabase.getDatabase(applicationContext)
+        val userMenuDao = db?.userMenuDao()
+
+        if (userMenuDao != null) {
+            val userMenu = UserMenu(id = 0, menusName = menuTitle)
+            Thread {
+                userMenuDao.insertUserMenu(userMenu)
+                runOnUiThread {
+                    Toast.makeText(this, "$menuTitle db에 추가됨", Toast.LENGTH_SHORT).show()
+                }
+            }.start()
         }
     }
 
