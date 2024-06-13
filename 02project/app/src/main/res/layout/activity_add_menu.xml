@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/menuNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="메뉴 이름" />
+
+    <EditText
+        android:id="@+id/waterEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="물 (ml)" />
+
+    <EditText
+        android:id="@+id/colaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="콜라 (ml)" />
+
+    <EditText
+        android:id="@+id/ciderEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="사이다 (ml)" />
+
+    <EditText
+        android:id="@+id/orangeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="오렌지주스 (ml)" />
+
+    <Button
+        android:id="@+id/saveMenuButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메뉴 저장" />
+</LinearLayout>

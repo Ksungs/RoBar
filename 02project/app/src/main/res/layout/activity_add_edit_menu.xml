@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/menuNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="메뉴의 이름을 입력하세요."/>
+
+    <TableLayout
+        android:id="@+id/drinkTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <TextView android:text="음료1" />
+            <EditText
+                android:id="@+id/drink1EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="0"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="음료2" />
+            <EditText
+                android:id="@+id/drink2EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="0"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="음료3" />
+            <EditText
+                android:id="@+id/drink3EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="0"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="음료4" />
+            <EditText
+                android:id="@+id/drink4EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="0"/>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/totalPriceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="총 가격: 0원"
+        android:padding="8dp"/>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="저장"/>
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/menuNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="메뉴 이름"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/waterEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="물 (ml)"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/colaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="콜라 (ml)"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/ciderEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="사이다 (ml)"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/orangeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="오렌지 주스 (ml)"
+        android:inputType="number" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/saveMenuButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="저장"
+            android:padding="8dp" />
+    </LinearLayout>
+</LinearLayout>
