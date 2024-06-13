@@ -1,0 +1,19 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial BT(2, 3); // 블루투스 모듈의 RX, TX 핀 설정
+void setup() {
+Serial.begin(9600); // 시리얼 통신 초기화
+BTSerial.begin(9600); // 블루투스 모듈의 시리얼 통신 초기화
+Serial.println("Bluetooth 연결 대기 중...");
+}
+
+void loop()
+if (BTSerial.available()) { // 블루투스로부터 데이터를 읽음
+  char data = BTserial.read(); // 읽은 데이터를 변수에 저장
+  Serial.write(data); // 시리얼 모니터에 데이터를 출력
+}
+
+if (Serial.available()) { // 시리얼 통신으로부터 데이터를 읽어옴
+  char data = serial.read(); // 읽은 데이터를 변수에 저장
+  BTSerial.write(data); // 블루투스 모듈로 데이터를 전송
+}
